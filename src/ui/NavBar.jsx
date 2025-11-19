@@ -2,7 +2,7 @@ import Link from "./Link";
 
 function NavBar() {
   return (
-    <nav className="flex items-center justify-between bg-neutral-900 py-2">
+    <nav className="flex w-screen items-center justify-between bg-neutral-900 py-2">
       <h1 className="ml-11 text-xl font-semibold">
         <span className="text-white">Cook</span>
         <span className="text-yellow-400">Book</span>

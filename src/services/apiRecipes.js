@@ -1,5 +1,7 @@
-async function getMeals() {
+export async function getMeals() {
   const res = await fetch(
-    `www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata`,
+    `https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata`,
   );
+  const data = await res.json();
+  console.log(data);
 }
