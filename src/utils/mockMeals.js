@@ -21,8 +21,8 @@ export const mockMeals = [
   },
   {
     id: 5,
-    name: "Shrimp Scampi",
-    image: "https://www.themealdb.com/images/media/meals/rtwwvv1511799502.jpg",
+    name: "Teriyaki Chicken Casserole",
+    image: "https://www.themealdb.com/images/media/meals/wvqpwt1468339226.jpg",
   },
   {
     id: 6,
@@ -31,8 +31,8 @@ export const mockMeals = [
   },
   {
     id: 7,
-    name: "Lamb Korma",
-    image: "https://www.themealdb.com/images/media/meals/uwvxpv1511293555.jpg",
+    name: "Beef and Mustard Pie",
+    image: "https://www.themealdb.com/images/media/meals/sytuqu1511553755.jpg",
   },
   {
     id: 8,
@@ -41,8 +41,8 @@ export const mockMeals = [
   },
   {
     id: 9,
-    name: "Eggplant Parmesan",
-    image: "https://www.themealdb.com/images/media/meals/vrspxw1511791072.jpg",
+    name: "Corba",
+    image: "https://www.themealdb.com/images/media/meals/58oia61564916529.jpg",
   },
   {
     id: 10,
