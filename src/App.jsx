@@ -1,13 +1,22 @@
-import NavBar from "./ui/NavBar";
-import Home from "./Home";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Applayout from "./ui/Applayout";
+import Home, { loader as newsLoader } from "./Home";
+
+const router = createBrowserRouter([
+  {
+    element: <Applayout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+        loader: newsLoader,
+      },
+    ],
+  },
+]);
 
 function App() {
-  return (
-    <div>
-      <NavBar />
-      <Home />
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
