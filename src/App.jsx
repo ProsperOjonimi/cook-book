@@ -1,5 +1,13 @@
+import NavBar from "./ui/NavBar";
+import Home from "./Home";
+
 function App() {
-  return <div>Hello Cook book</div>;
+  return (
+    <div>
+      <NavBar />
+      <Home />
+    </div>
+  );
 }
 
 export default App;
