@@ -4,7 +4,7 @@ import Category from "./Category";
 function RecipeByCategory() {
   console.log(foodCategories);
   return (
-    <div className="bg-orange-100 px-2 pt-11">
+    <div className="bg-orange-100 px-2 pb-5 pt-11">
       <h2 className="text-center text-2xl font-bold">
         Find Recipes by Category
       </h2>

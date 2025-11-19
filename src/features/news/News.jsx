@@ -1,7 +1,7 @@
 export function News() {
   return (
-    <div>
-      <h2 className="text-center text-2xl font-bold">Check Our latest News!</h2>
+    <div className="bg-orange-50">
+      <h2 className="text-center text-2xl font-bold">Check our Latest News!</h2>
     </div>
   );
 }
