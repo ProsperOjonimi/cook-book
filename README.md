@@ -32,7 +32,7 @@ Cookbook is a modern recipe discovery app built with **React**, **Redux Toolkit*
 
 ```bash
 git clone https://github.com/ProsperOjonimi/cook-book.git
-cd cookbook-recipe-finder
+cd cook-book
 ```
 
 ### **2. Install dependencies**
