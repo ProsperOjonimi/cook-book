@@ -5,7 +5,7 @@ export function News({ news }) {
   const newsNo = randomNoGenerator(0, news.results.length - 1);
 
   const newsProper = news.results[newsNo];
-  console.log(newsProper);
+
   const newsBanner = newsProper.image_url;
   const newsDescription = newsProper.description;
   const newsLink = newsProper.link;

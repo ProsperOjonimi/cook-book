@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="bg-neutral-900">
+    <footer className="flex items-center justify-center bg-neutral-900">
       <p className="text-center text-yellow-400">Made with 💓 by Ojonimi</p>
     </footer>
   );

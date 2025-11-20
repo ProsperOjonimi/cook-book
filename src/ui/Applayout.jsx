@@ -4,9 +4,11 @@ import Footer from "./Footer";
 
 function Applayout() {
   return (
-    <div>
+    <div className="grid min-h-screen grid-rows-[auto_1fr_auto]">
       <NavBar />
+
       <Outlet />
+
       <Footer />
     </div>
   );
