@@ -19,10 +19,10 @@ function NavBar() {
         </li>
         <li>
           <NavLink
-            to="/recipes"
+            to="/favorites"
             className="transition-colors duration-300 hover:text-yellow-400"
           >
-            About
+            Favorites
           </NavLink>
         </li>
         <li>

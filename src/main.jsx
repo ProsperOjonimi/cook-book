@@ -2,18 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
-import { getMeals } from "./services/apiRecipes.js";
 import { Provider } from "react-redux";
 import store from "./Store.js";
-
-console.log(store);
-
-console.log(getMeals());
+import { SearchProvider } from "./features/search/searchContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <SearchProvider>
+        <App />
+      </SearchProvider>
     </Provider>
   </React.StrictMode>,
 );
