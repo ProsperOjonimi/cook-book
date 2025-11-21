@@ -1,4 +1,8 @@
 import { Link } from "react-router-dom";
+import FavoritesButton from "../../ui/FavoritesButton";
+import { useDispatch } from "react-redux";
+import { saveID } from "./RecipesSlice";
+import store from "../../Store";
 
 /* eslint-disable react/prop-types */
 function Recipe({ data }) {
@@ -10,12 +14,21 @@ function Recipe({ data }) {
   const ingredients2 = data.strIngredient2;
   const ingredients3 = data.strIngredient3;
   const video = data.strYoutube;
+  const recipeID = data.idMeal;
+  console.log(recipeID);
+  const dispatch = useDispatch();
+  dispatch(saveID(recipeID));
+  console.log(store.getState());
   return (
     <div className="w-80 rounded-2xl border bg-white sm:w-96">
       <img src={recipeBanner} alt="" className="rounded-2xl" />
       <div className="flex flex-col bg-white pb-4">
-        <h2 className="mt-3 text-center text-2xl font-semibold text-yellow-800">
+        <h2 className="mt-3 flex flex-wrap items-center justify-center gap-7 text-center text-2xl font-semibold text-yellow-800">
           {recipeName}
+
+          <span className="mt-1">
+            <FavoritesButton />
+          </span>
         </h2>
         <p className="ml-20 mt-4 text-yellow-600">
           <span>{recipeCategory}</span> • <span>{recipeArea}</span>
@@ -34,7 +47,10 @@ function Recipe({ data }) {
           >
             Watch full video
           </Link>
-          <Link className="rounded-xl border border-yellow-400 p-2 transition-colors duration-300 hover:bg-yellow-400">
+          <Link
+            className="rounded-xl border border-yellow-400 p-2 transition-colors duration-300 hover:bg-yellow-400"
+            to="/recipe/12345"
+          >
             View full recipe
           </Link>
         </div>

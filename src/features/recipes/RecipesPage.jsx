@@ -1,12 +1,17 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Recipe from "./Recipe";
 import { useState } from "react";
+import { saveRecipe } from "./RecipesSlice";
+import store from "../../Store";
 function RecipesPage() {
   const navigate = useNavigate();
   const [curRecipe, setCurRecipe] = useState(0);
 
   const data = useLoaderData();
+  const dispatch = useDispatch();
+  dispatch(saveRecipe(data));
+  console.log(store.getState());
 
   if (!data.meals) throw new Error("Recipe not found");
 
