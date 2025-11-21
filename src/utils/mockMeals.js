@@ -1,13 +1,13 @@
 export const mockMeals = [
   {
     id: 1,
-    name: "Spaghetti Carbonara",
-    image: "https://www.themealdb.com/images/media/meals/llcbn01574260722.jpg",
+    name: " Biryani",
+    image: "https://www.themealdb.com/images/media/meals/xrttsx1487339558.jpg",
   },
   {
     id: 2,
-    name: "Chicken Tikka Masala",
-    image: "https://www.themealdb.com/images/media/meals/wyxwsp1486979827.jpg",
+    name: "Peanut Butter Cheesecake",
+    image: "https://www.themealdb.com/images/media/meals/qtuuys1511387068.jpg",
   },
   {
     id: 3,
@@ -16,18 +16,18 @@ export const mockMeals = [
   },
   {
     id: 4,
-    name: "Veggie Stir-Fry",
-    image: "https://www.themealdb.com/images/media/meals/wqurxy1511453156.jpg",
+    name: "Thai rice noodle salad",
+    image: "https://www.themealdb.com/images/media/meals/6g3rso1763486069.jpg",
   },
   {
     id: 5,
-    name: "Teriyaki Chicken Casserole",
-    image: "https://www.themealdb.com/images/media/meals/wvqpwt1468339226.jpg",
+    name: "Matambre a la Pizza",
+    image: "https://www.themealdb.com/images/media/meals/wf49qs1763075222.jpg",
   },
   {
     id: 6,
-    name: "Margherita Pizza",
-    image: "https://www.themealdb.com/images/media/meals/x0lk931587671540.jpg",
+    name: "Laksa King Prawn Noodles",
+    image: "https://www.themealdb.com/images/media/meals/rvypwy1503069308.jpg",
   },
   {
     id: 7,

@@ -1,14 +1,17 @@
+import { Link } from "react-router-dom";
+
 /* eslint-disable react/prop-types */
 function Recipe({ data }) {
-  const recipeBanner = data.meals[0].strMealThumb;
-  const recipeName = data.meals[0].strMeal;
-  const recipeCategory = data.meals[0].strCategory;
-  const recipeArea = data.meals[0].strArea;
-  const ingredients1 = data.meals[0].strIngredient1;
-  const ingredients2 = data.meals[0].strIngredient2;
-  const ingredients3 = data.meals[0].strIngredient3;
+  const recipeBanner = data.strMealThumb;
+  const recipeName = data.strMeal;
+  const recipeCategory = data.strCategory;
+  const recipeArea = data.strArea;
+  const ingredients1 = data.strIngredient1;
+  const ingredients2 = data.strIngredient2;
+  const ingredients3 = data.strIngredient3;
+  const video = data.strYoutube;
   return (
-    <div className="w-80 rounded-2xl border bg-white">
+    <div className="w-80 rounded-2xl border bg-white sm:w-96">
       <img src={recipeBanner} alt="" className="rounded-2xl" />
       <div className="flex flex-col bg-white pb-4">
         <h2 className="mt-3 text-center text-2xl font-semibold text-yellow-800">
@@ -25,18 +28,15 @@ function Recipe({ data }) {
         <p className="ml-5 text-lg">...</p>
 
         <div className="ml-3 mt-3 flex gap-5">
-          <a
-            href=""
+          <Link
+            to={video}
             className="rounded-xl border border-yellow-400 p-2 transition-colors duration-300 hover:bg-yellow-400"
           >
             Watch full video
-          </a>
-          <a
-            href=""
-            className="rounded-xl border border-yellow-400 p-2 transition-colors duration-300 hover:bg-yellow-400"
-          >
+          </Link>
+          <Link className="rounded-xl border border-yellow-400 p-2 transition-colors duration-300 hover:bg-yellow-400">
             View full recipe
-          </a>
+          </Link>
         </div>
       </div>
     </div>

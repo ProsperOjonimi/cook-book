@@ -4,6 +4,7 @@ import Home from "./Home";
 import RecipesPage from "./features/recipes/RecipesPage";
 import { getMeals } from "./services/apiRecipes";
 import store from "./Store";
+import NotFound from "./ui/Error";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
 
           return recipes;
         },
+        errorElement: <NotFound />,
       },
     ],
   },
