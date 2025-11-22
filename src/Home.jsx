@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import FeaturedMeals from "./features/featuredAndCategoryRecipes/FeaturedMeals";
 import RecipeByCategory from "./features/featuredAndCategoryRecipes/RecipeByCategory";
 import News from "./features/news/News";
-// import { fetchNews } from "./services/apiNews";
+import { fetchNews } from "./services/apiNews";
 import Header from "./ui/Header";
 
 function Home() {
@@ -17,8 +17,13 @@ function Home() {
     </div>
   );
 }
-// export async function loader() {
-//   const news = await fetchNews();
-//   return news;
-// }
+let cachedNews = null;
+export async function loader() {
+  if (cachedNews) {
+    return cachedNews;
+  }
+  const news = await fetchNews();
+  cachedNews = news;
+  return cachedNews;
+}
 export default Home;

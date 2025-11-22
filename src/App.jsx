@@ -1,11 +1,15 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Applayout from "./ui/Applayout";
-import Home from "./Home";
+import Home, { loader as newsLoader } from "./Home";
 import RecipesPage from "./features/recipes/RecipesPage";
-import { getMeals } from "./services/apiRecipes";
+import { getCategoryMeals, getMeals } from "./services/apiRecipes";
 import store from "./Store";
 import NotFound from "./ui/Error";
-import RecipeInfo from "./features/recipes/RecipeInfo";
+import RecipeInfo, {
+  loader as recipeInfoLoader,
+} from "./features/recipes/RecipeInfo";
+import RecipeCategoryPage from "./features/recipes/RecipeCategoryPage";
+import FavoritesPage from "./features/favorites/FavoritesPage";
 
 const router = createBrowserRouter([
   {
@@ -14,7 +18,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        // loader: newsLoader,
+        loader: newsLoader,
       },
       {
         path: "/recipes",
@@ -29,8 +33,26 @@ const router = createBrowserRouter([
         errorElement: <NotFound />,
       },
       {
-        path: "/recipe/:id",
+        path: "/recipes/:id",
         element: <RecipeInfo />,
+        loader: recipeInfoLoader,
+        errorElement: <NotFound />,
+      },
+      {
+        path: "/category",
+        element: <RecipeCategoryPage />,
+        loader: async function loader() {
+          const storeData = store.getState();
+          const query = storeData.search.query;
+          const categoryRecipes = await getCategoryMeals(query);
+
+          return categoryRecipes;
+        },
+        errorElement: <NotFound />,
+      },
+      {
+        path: "/favorites",
+        element: <FavoritesPage />,
         errorElement: <NotFound />,
       },
     ],

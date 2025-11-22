@@ -5,13 +5,13 @@ import Loader from "./Loader";
 
 function Applayout() {
   const navigation = useNavigation();
+  console.log(navigation);
   const isLoading = navigation.state === "loading";
   return (
     <div className="grid min-h-screen grid-rows-[auto_1fr_auto]">
-      {isLoading && <Loader />}
-
       <NavBar />
 
+      {isLoading && <Loader />}
       <Outlet />
 
       <Footer />

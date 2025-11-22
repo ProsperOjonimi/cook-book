@@ -1,17 +1,18 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useLoaderData, useNavigate } from "react-router-dom";
-import Recipe from "./Recipe";
+import { useNavigate } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { setFavorites } from "../favorites/FavoritesMealSlice";
-import Popup from "../../ui/Popup";
 
-function RecipesPage() {
+import RecipeCategory from "./RecipeCategory";
+import Popup from "../../ui/Popup";
+function RecipeCategoryPage() {
   const navigate = useNavigate();
   const [curRecipe, setCurRecipe] = useState(0);
   const [showPopup, setShowPopup] = useState(false);
-
-  const data = useLoaderData();
   const dispatch = useDispatch();
+  const data = useLoaderData();
 
   if (!data.meals) throw new Error("Recipe not found");
 
@@ -29,7 +30,6 @@ function RecipesPage() {
     if (curRecipe === 0) return;
     setCurRecipe((cur) => cur - 1);
   }
-
   function handleFavoriteMeal() {
     dispatch(setFavorites(data.meals[curRecipe]));
     setShowPopup(true);
@@ -50,7 +50,7 @@ function RecipesPage() {
             </span>
             Back
           </p>
-          <p className="mt-2 flex flex-wrap">{`"${query}"`}</p>
+          <p className="mt-3">{`Search: "${query}"`}</p>
         </div>
         <p className="">
           <span className="font-semibold text-yellow-600">{count}</span> Recipes
@@ -66,9 +66,9 @@ function RecipesPage() {
         >
           &larr;
         </span>
-        <Recipe
+        <RecipeCategory
           data={data.meals[curRecipe]}
-          favoritesClick={handleFavoriteMeal}
+          favoriteClick={handleFavoriteMeal}
         />
         <span
           className="-ml-6 mt-96 cursor-pointer text-5xl font-extrabold"
@@ -81,4 +81,4 @@ function RecipesPage() {
   );
 }
 
-export default RecipesPage;
+export default RecipeCategoryPage;
