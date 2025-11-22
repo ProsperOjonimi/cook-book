@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import Link from "./Link";
 
 function NavBar() {
   return (
@@ -24,9 +23,6 @@ function NavBar() {
           >
             Favorites
           </NavLink>
-        </li>
-        <li>
-          <Link>News</Link>
         </li>
       </ul>
     </nav>
